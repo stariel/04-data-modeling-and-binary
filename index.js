@@ -1,6 +1,7 @@
 'use strict'
 
-const fileCli = require('./lib/file.js');
-const bitmapParser = require('./lib/file.js');
+const fileCli = require('src/lib/file.js');
+const bitmapParser = require('src/lib/file.js');
 
+const transformations = ['invert', 'rotate', 'randomize', 'frame'];
 
