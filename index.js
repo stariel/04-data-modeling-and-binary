@@ -1,6 +1,6 @@
 'use strict'
 
 const fileUtils = require('./lib/file.js');
-const bitmapParser
+const bitmapParser = require('./lib/file.js');
 
 
