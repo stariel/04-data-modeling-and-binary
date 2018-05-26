@@ -21,4 +21,15 @@ describe('Bitmap Reader', () => {
     });
     done();
   });
+
+  it('first two characters of the buffer should be BM', (done) => {
+    let path = '../assets/bitmap.bmp';
+    bitmapReader(path, (err, data) => {
+      let actual = data.toString('utf-8', 0, 2);
+      let expected = 'BM';
+      expect(actual).toEqual(expected);
+    });
+    done();
+  });
+
 });
