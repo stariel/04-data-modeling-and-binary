@@ -1,7 +1,8 @@
-'use strict'
+'use strict';
 
-const fileCli = require('src/lib/file.js');
-const bitmapParser = require('src/lib/file.js');
+const fileReader = require('src/lib/file.js');
+const bitmapParser = require('src/lib/buffer.js');
+const transformFile = require('src/lib/transformation.js');
 
-const transformations = ['invert', 'rotate', 'randomize', 'frame'];
+const transformations = ['speckle', 'colorSwap', '', ''];
 
