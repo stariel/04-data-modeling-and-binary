@@ -43,10 +43,11 @@ describe('Bitmap Reader', () => {
   });
 
   it('should create a file with the filepath newImage.bmp', () => {
-    let path = __dirname+'/../assets/bitmap.bmp';
+    let path = __dirname+'/../assets/newImage.bmp';
     bitmapReader(path, (err, buffer) => {
-      expect('../../assets/newImage.bmp').toBeDefined();
+      expect(err).toBeUndefined();
       expect(typeof buffer).toBe('object');
+    
     });
   });
 
