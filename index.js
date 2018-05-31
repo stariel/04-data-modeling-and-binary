@@ -17,10 +17,13 @@ exports.createImage = (oldImg, transformation, newImg => {
   fileReader.readFile(`${__dirname}/assets/${oldImg}`,(err, buffer) => {
     if (err) { throw err; }
     
-    // let oldBuffer = bitmapParser(buffer);
-    // let newBuffer = Buffer.concat([oldImg.bmpHeader, oldImg.dibHeader, oldImg.colorTable, oldImg.pixelArray], oldImg.length);
+    let oldBuffer = bitmapParser(buffer);
+    console.log(oldBuffer);
+    let newBuffer = Buffer.concat([oldBuffer.bmpHeader, oldBuffer.dibHeader, oldBuffer.colorTable, oldBuffer.pixelArray], oldBuffer.length);
+  
+    // console.log(newBuffer);
     
-    let newBuffer = buffer;
+    // let newBuffer = buffer;
     fileReader.writeFile(`${__dirname}/assets/newImg.bmp`, newBuffer,(err) => {
       if (err) { throw err; }
       else {
@@ -30,4 +33,4 @@ exports.createImage = (oldImg, transformation, newImg => {
   }); 
 });
 // export { createImage };
-// createImage(oldImg, transformation, newImg);
+exports.createImage(oldImg, transformation, newImg);

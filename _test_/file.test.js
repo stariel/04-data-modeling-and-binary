@@ -34,12 +34,13 @@ describe('Bitmap Reader', () => {
     
   });
 
-  it('the object should have the correct dimentions', () => {
+  it('the object should have the correct dimentions', (done) => {
     let path = `${__dirname}/../assets/bitmap.bmp`;
     bitmapReader(path, (err, buffer) => {
       expect(this.width).toBe('100');
       expect(this.height).toBe('100');
       console.log(buffer);
+      done();
     });
   });
 
