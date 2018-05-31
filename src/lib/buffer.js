@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('fs');
+// const fs = require('fs');
 
 module.exports = exports = (path) => {
   const FILE_SIZE_OFFSET = 2; 
@@ -27,5 +27,4 @@ module.exports = exports = (path) => {
       this.length = buffer.length;
     }
   }
-
 };
