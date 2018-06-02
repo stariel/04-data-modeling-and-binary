@@ -11,7 +11,7 @@ let transformations = {};
 transformations.speckle = buffer => {
   let newBuffer = buffer;
   for (let i = 0; i < buffer.pixelArray.length; i+=3) {
-    newBuffer[i] = '#000000';
+    newBuffer[i] = 0;
   }
   return newBuffer;
 };
