@@ -1,22 +1,21 @@
 'use strict';
 
+// const bitmapParser = require(`${__dirname}/buffer.js`);
 const fs = require('fs');
 
-module.exports = exports = {
-  read:
-    function read(path) {
-      fs.readFile(path, (err, buffer) => {
-        if (err) throw err;
-        let image = new Picture(buffer);
-        console.log(image);
-      });
-    },
-
-  write:
-      function write(newPath, newBuffer) {
-        fs.writeFile(newPath, newBuffer, (err) => {
-          if (err) throw err;
-          console.log(newBuffer);
-        });
-      },
+module.exports = exports = {};
+// read
+exports.readFile = (path, callback) => {
+  fs.readFile(path, (err, data) => {
+    if (err) return callback(err);
+    return callback(null, data);
+  });
+};
+// write
+exports.writeFile = (newPath, newBuffer, callback) => {
+  fs.writeFile(newPath, newBuffer, (err, data) => {
+    if (err) return callback(err);
+    console.log('New file written');
+    return callback(null, data);
+  });
 };

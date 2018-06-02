@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --verbose --coverage",
     "lint": "eslint **/*.js",
-    "start": ""
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Bolstad09/04-data-modeling-and-binary#readme",
   "dependencies": {
     "eslint": "^4.19.1",
+    "fs": "0.0.1-security",
     "jest": "^23.0.0"
   }
 }
