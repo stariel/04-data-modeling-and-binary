@@ -9,13 +9,28 @@ const transformations = ['speckle', 'colorSwap', '', ''];
 
 let oldImg = 'bitmap.bmp';
 let newImg = 'newImage.bmp';
-let transformation = 'speckle';
 
 
 module.exports = exports = {};
-exports.createImage = (oldImg, transformation, newImg => {
+exports.createImage = (oldImg, newImg, transName) => {
+let transformation;
+
+switch (transName) {
+  case 'speckle':
+    transformation = transformFile.speckle;
+    break;
+
+  case 'colorSwap':
+    transformation = transformFile.colorSwap;
+    break;
+
+  default:
+    console.log('Choose from speckle or color swap);
+
+  }
+
   fileReader.readFile(`${__dirname}/assets/${oldImg}`,(err, buffer) => {
-    if (err) { throw err; }
+    if (err) { console.log(err); }
     
     let oldBuffer = bitmapParser(buffer);
     console.log(oldBuffer);
@@ -32,5 +47,4 @@ exports.createImage = (oldImg, transformation, newImg => {
     });
   }); 
 });
-// export { createImage };
-exports.createImage(oldImg, transformation, newImg);
+module.exports = createImage;
