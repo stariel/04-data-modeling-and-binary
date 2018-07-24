@@ -1,6 +1,6 @@
 'use strict';
 
-// module.exports = exports = {};
+require('buffer');
 
 module.exports = function(buffer){
   const FILE_SIZE_OFFSET = 2; 

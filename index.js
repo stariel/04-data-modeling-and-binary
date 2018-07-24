@@ -4,18 +4,15 @@ const fileReader = require(`${__dirname}/src/lib/file.js`);
 const bitmapParser = require(`${__dirname}/src/lib/buffer.js`);
 const transformFile = require(`${__dirname}/src/lib/transformation.js`);
 
-
-const transformations = ['speckle', 'colorSwap', '', ''];
-
-let oldImg = 'bitmap.bmp';
-let newImg = 'newImage.bmp';
+// let oldImg = 'bitmap.bmp';
+// let newImg = 'newImage.bmp';
 
 
 module.exports = exports = {};
 exports.createImage = (oldImg, newImg, transName) => {
-let transformation;
+  let transformation;
 
-switch (transName) {
+  switch (transName) {
   case 'speckle':
     transformation = transformFile.speckle;
     break;
@@ -25,7 +22,7 @@ switch (transName) {
     break;
 
   default:
-    console.log('Choose from speckle or color swap);
+    console.log('Choose from speckle or color swap');
 
   }
 
@@ -34,7 +31,7 @@ switch (transName) {
     
     let oldBuffer = bitmapParser(buffer);
     console.log(oldBuffer);
-    let newBuffer = Buffer.concat([oldBuffer.bmpHeader, oldBuffer.dibHeader, oldBuffer.colorTable, oldBuffer.pixelArray], oldBuffer.length);
+    let newBuffer = transformation(oldBuffer);
   
     // console.log(newBuffer);
     
@@ -46,5 +43,4 @@ switch (transName) {
       }
     });
   }); 
-});
-module.exports = createImage;
+};
