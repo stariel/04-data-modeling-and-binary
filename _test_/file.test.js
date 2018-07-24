@@ -1,5 +1,6 @@
 'use strict';
 
+require('buffer');
 const bitmapReader = require(`${__dirname}/../src/lib/buffer.js`);
 // const createImage = require(`${__dirname}/../index.js`);
 
