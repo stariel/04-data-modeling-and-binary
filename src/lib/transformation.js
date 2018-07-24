@@ -25,3 +25,14 @@ transformations.colorSwap = buffer => {
   }
   return newBuffer;
 };
+
+transformations.random = buffer => {
+  let newBuffer = buffer;
+  let colorTable = buffer.colorTable;
+  for (var i = 0; i < colorTable.length; i += 3) {
+    colorTable[i] = (Math.floor(Math.random() * 255));
+    colorTable[i + 1] = (Math.floor(Math.random() * 255));
+    colorTable[i + 2] = (Math.floor(Math.random() * 255));
+  }
+  return newBuffer;
+};

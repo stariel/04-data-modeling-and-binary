@@ -21,8 +21,12 @@ exports.createImage = (oldImg, newImg, transName) => {
     transformation = transformFile.colorSwap;
     break;
 
+  case 'random':
+    transformation = transformFile.random;
+    break;
+
   default:
-    console.log('Choose from speckle or color swap');
+    console.log('Choose from speckle, color swap, or random');
 
   }
 
